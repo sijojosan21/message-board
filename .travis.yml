@@ -9,7 +9,7 @@ before_install:
 
 script:
     - docker run -e CI=true sijojosan/message-board-ui_dev npm test
-    - docker run sijojosan/message-board-service_dev ./mvnw test
+    - docker run sijojosan/message-board-service_dev mvn test
 
 after_success:
     - docker build -t sijojosan/message-board-ui ./message-board-ui
