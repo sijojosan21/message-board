@@ -1,0 +1,52 @@
+ul#horizontal-list {
+
+list-style: none;
+padding-top: 20px;
+}
+ul#horizontal-list li {
+  display: inline;
+  padding-left: 20px;
+}
+
+.centered {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.colourChocolate {
+
+  color: chocolate;
+}
+.colourDarkorchid {
+
+  color: darkorchid;
+}
+
+a:link.menu  {
+  text-decoration: none;
+  color: dodgerblue;
+}
+a:visited.menu  {
+  text-decoration: none;
+  color: dodgerblue;
+}
+a:hover.menu  {
+  text-decoration: none;
+  color: brown;
+}
+a:active.menu  {
+  text-decoration: none;
+  color: brown;
+}
+.activeMenu {
+  text-decoration: none;
+  color: brown;
+}
+
+div.borderGreen {
+  border-style: solid;
+  border-color: green;
+  padding: 10px;
+  margin: 10px;
+}
