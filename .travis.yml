@@ -1,0 +1,15 @@
+sudo: required
+
+services:
+    - docker
+
+before_install:
+    - docker build -t sijojosan/message-board-ui_dev -f ./message-board-ui/Dockerfile.dev ./message-board-ui
+
+script:
+    - docker run sijojosan/message-board-ui_dev npm test -- --coverage
+    
+after_success:
+    - docker build -t sijojosan/message-board-ui ./message-board-ui
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    - docker push sijojosan/message-board-ui

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import './App.css';
 
-axios.defaults.baseURL = 'http://localhost:4000';
+//axios.defaults.baseURL = 'http://localhost:4000';
 
 class DeleteMessage extends Component {
 
