@@ -1,0 +1,8 @@
+FROM alpine
+WORKDIR '/app'
+
+RUN chmod 777 mvnw
+RUN ./mvn clean
+COPY . .
+
+CMD ["./mvn", "spring-boot:run"]
