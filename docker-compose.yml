@@ -1,0 +1,24 @@
+version: '3'
+services:
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - '5000:80'
+  message-board-service:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./message-board-service
+    environment:
+      - PGUSER=postgres
+      - PGHOST=postgres
+      - PGDATABASE=postgres
+      - PGPASSWORD=postgres_password
+      - PGPORT=5432
+  message-board-ui:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./message-board-ui
+    stdin_open: true

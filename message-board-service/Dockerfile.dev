@@ -1,6 +1,11 @@
-FROM openjdk:8-jdk-alpine
-WORKDIR '/app'
-COPY . .
-RUN ./mvnw clean
+FROM maven:3.6.3-openjdk-8
 
-CMD ["./mvnw", "spring-boot:run"]
+WORKDIR '/app'
+
+COPY pom.xml /tmp/pom.xml
+RUN mvn -B -f /tmp/pom.xml -s /usr/share/maven/ref/settings-docker.xml dependency:resolve
+
+COPY pom.xml .
+COPY src src
+
+CMD ["mvn", "spring-boot:run"]
