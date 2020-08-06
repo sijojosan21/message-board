@@ -7,7 +7,7 @@ before_install:
     #- docker build -t sijojosan/message-board-ui_dev -f ./message-board-ui/Dockerfile.dev ./message-board-ui
     - cd message-board-service
     - ./mvnw clean
-    - cd..
+    - cd ..
     - docker build -t sijojosan/message-board-service_dev -f ./message-board-service/Dockerfile.dev ./message-board-service
 
 script:
