@@ -2,6 +2,12 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
     {
+      "name": "message-board-service",
+      "image": "sijojosan/message-board-service",
+      "hostname": "message-board-service",
+      "essential": false,
+      "memory": 128
+    },{
       "name": "message-board-ui",
       "image": "sijojosan/message-board-ui",
       "hostname": "message-board-ui",
@@ -19,7 +25,7 @@
           "containerPort": 80
         }
       ],
-      "links": ["message-board-ui"],
+      "links": ["message-board-service", "message-board-ui"],
       "memory": 128
     }
   ]
