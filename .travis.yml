@@ -25,9 +25,9 @@ deploy:
   provider: elasticbeanstalk
   region: us-east-1
   app: message-board
-  env: MessageBoard-env-2
+  env: MessageBoard-env-3
   bucket_name: elasticbeanstalk-us-east-1-660893847153
-  bucket_path: message-board-2
+  bucket_path: message-board-3
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
