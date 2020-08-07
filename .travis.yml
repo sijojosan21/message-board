@@ -5,16 +5,15 @@ cache:
 services:
     - docker
 
-#before_install:
-    #- docker build -t sijojosan/message-board-ui_dev -f ./message-board-ui/Dockerfile.dev ./message-board-ui
-    #- docker build -t sijojosan/message-board-service_dev -f ./message-board-service/Dockerfile.dev ./message-board-service
-
-#script:
-    #- docker run -e CI=true sijojosan/message-board-ui_dev npm test
-    #- docker run sijojosan/message-board-service_dev mvn test
-
-#after_success:
 before_install:
+    - docker build -t sijojosan/message-board-ui_dev -f ./message-board-ui/Dockerfile.dev ./message-board-ui
+    - docker build -t sijojosan/message-board-service_dev -f ./message-board-service/Dockerfile.dev ./message-board-service
+
+script:
+    - docker run -e CI=true sijojosan/message-board-ui_dev npm test
+    - docker run sijojosan/message-board-service_dev mvn test
+
+after_success:
     - docker build -t sijojosan/message-board-ui ./message-board-ui
     - docker build -t sijojosan/message-board-service ./message-board-service
     - docker build -t sijojosan/message-board-nginx ./nginx
