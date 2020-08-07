@@ -14,4 +14,4 @@ FROM openjdk:8-jdk-alpine
 EXPOSE 4000
 WORKDIR '/app'
 COPY --from=builder /app/target/message-board-service*.jar ./message-board-service.jar
-ENTRYPOINT ["java","-jar","/message-board-service.jar"]
+ENTRYPOINT ["java", "-jar", "message-board-service.jar"]
