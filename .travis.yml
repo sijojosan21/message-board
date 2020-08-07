@@ -24,7 +24,7 @@ deploy:
   provider: elasticbeanstalk
   region: us-east-1
   app: message-board
-  env: MessageBoard-env
+  env: MessageBoard-env-1
   bucket_name: elasticbeanstalk-us-east-1-660893847153
   bucket_path: message-board
   on:
