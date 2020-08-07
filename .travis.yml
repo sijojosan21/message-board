@@ -21,6 +21,7 @@ after_success:
     - docker push sijojosan/message-board-nginx
     
 deploy:
+  edge: true  
   provider: elasticbeanstalk
   region: us-east-1
   app: message-board
