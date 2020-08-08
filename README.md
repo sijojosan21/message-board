@@ -1,6 +1,6 @@
 # message-board
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![Build Status](https://travis-ci.org/sijojosan21/message-board.svg?branch=master)](https://travis-ci.org/sijojosan21/message-board)
 
 <br/>
 
@@ -19,7 +19,7 @@ Application can be accessed at [sijojosan.com]
 
 ### What is Travis CI
 Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub and Bitbucket. Travis CI provides various paid plan for private projects, and a free plan for open source.
-<br/>
+<br/><br/>
 
 ### How to Deploy in AWS
   - Commit changes to the develop branch.
