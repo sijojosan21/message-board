@@ -15,7 +15,7 @@ Application can be accessed at http://sijojosan.com
 <br/>
 
 ### System Architecture 
-![System Architecture](https://i.imgur.com/ki8NdVN.jpg)
+![System Architecture](https://imgur.com/Rddycz8.jpg)
 <br/>
 
 ### Docker Container Components
