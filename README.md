@@ -35,7 +35,7 @@ cd message-board
 docker-compose build
 docker-compose up
 ```
-
+<br/>
 
 ## Diagrams
 
@@ -49,6 +49,7 @@ docker-compose up
 
 ### Deployment Overview
 ![Deployment Overview](/misc/dplymnt.jpg)
+<br/>
 
 ## License
 Apache License 2.0, see [LICENSE].
