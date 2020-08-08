@@ -9,9 +9,12 @@ Application can be accessed at http://sijojosan.com
 <br/>
 
 ### Technology Stack
-  - Spring Boot/Java (for Backend REST API Endpoints)
-  - Reactjs - (for the frontend UI)
-  - PostgreSQL - (for data persistence)
+  - Spring Boot/Java - for the backend REST API endpoints
+  - Reactjs - for the frontend UI
+  - PostgreSQL - for data persistence
+  - Docker - for containerization
+  - Travis CI - for build and deployment
+  - Amazon Web Services - for hosting
 <br/>
 
 ### How to Deploy in AWS
@@ -22,6 +25,7 @@ Application can be accessed at http://sijojosan.com
 <br/>
 
 ### How to Deploy in Local
+Make the required changes in either the UI or the service backend and run the flowing commands. (Docker for desktop is required)
 ```sh
 cd message-board
 docker-compose build
