@@ -17,6 +17,9 @@ after_success:
     - docker build -t sijojosan/message-board-ui ./message-board-ui
     - docker build -t sijojosan/message-board-service ./message-board-service
     - docker build -t sijojosan/message-board-nginx ./nginx
+
+    
+after_success:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     - docker push sijojosan/message-board-ui
     - docker push sijojosan/message-board-service
