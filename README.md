@@ -12,17 +12,14 @@ Application can be accessed at http://sijojosan.com
   - Spring Boot/Java (for Backend REST API Endpoints)
   - Reactjs - (for the frontend UI)
   - PostgreSQL - (for data persistence)
-
 <br/>
 
 ### System Architecture 
 ![System Architecture](https://i.imgur.com/ki8NdVN.jpg)
-
 <br/>
 
 ### Docker Container Components
 ![Docker Container Components](https://i.imgur.com/TWw2Grw.jpg)
-
 <br/>
 
 ### CI/CD
