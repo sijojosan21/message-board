@@ -4,7 +4,7 @@
 
 <br/>
 
-Application can be accessed at http://sijojosan.com
+Application can be accessed at [sijojosan.com]
 
 <br/>
 
@@ -25,7 +25,7 @@ Application can be accessed at http://sijojosan.com
 <br/>
 
 ### How to Deploy in Local
-Make the required changes in either the UI or the service backend and run the flowing commands. (Docker for desktop is required)
+Make the required changes in either the UI or the service backend and run the flowing commands. ([Docker Desktop] is required)
 ```sh
 cd message-board
 docker-compose build
@@ -43,3 +43,7 @@ docker-compose up
 
 ### Deployment Overview
 ![Deployment Overview](/misc/dplymnt.jpg)
+
+
+[sijojosan.com]: <http://sijojosan.com>
+[Docker Desktop]: <https://www.docker.com/products/docker-desktop>
