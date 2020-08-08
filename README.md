@@ -24,6 +24,7 @@ Travis CI is a hosted continuous integration service used to build and test soft
 
 ### How to Deploy in AWS
   - Commit changes to the develop branch.
+  - If you do not have a write access to this repository, you may fork the repository and make changes.
   - Create a pull request to the master branch.
   - Merge the pull request.
   - Changes will be automatically detected and deployed to AWS with the help of Travis CI. (refer .travis.yml)
