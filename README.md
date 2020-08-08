@@ -13,8 +13,12 @@ Application can be accessed at [sijojosan.com]
   - Reactjs - for the frontend UI
   - PostgreSQL - for data persistence
   - Docker - for containerization
-  - Travis CI - for build and deployment
+  - [Travis CI] - for build and deployment
   - Amazon Web Services - for hosting
+<br/>
+
+### What is Travis CI
+Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub and Bitbucket. Travis CI provides various paid plan for private projects, and a free plan for open source.
 <br/>
 
 ### How to Deploy in AWS
@@ -46,4 +50,5 @@ docker-compose up
 
 
 [sijojosan.com]: <http://sijojosan.com>
+[Travis CI]: <https://travis-ci.org>
 [Docker Desktop]: <https://www.docker.com/products/docker-desktop>
