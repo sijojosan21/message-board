@@ -37,6 +37,24 @@ docker-compose up
 ```
 <br/>
 
+## API Documentation
+  - [Swagger API Documentation]
+<br/>
+
+## Testing
+
+### Unit Testing
+JUnit test cases are writen to unit test each service method. These test cases are executed before each deployment to AWS. If any of the test cases fail, deployment is aborted.
+
+### Functional Testing
+A functional test suite wriiten using [Selenium] Webdriver will test the proper funtioning of the UI. The test case has be exported as a executable jar and can be run using the bellow commands - 
+```sh
+cd message-board
+cd selenium-test
+java -jar selenium-test.jar
+```
+<br/>
+
 ## Diagrams
 
 ### System Architecture 
@@ -58,4 +76,6 @@ Apache License 2.0, see [LICENSE].
 [sijojosan.com]: <http://sijojosan.com>
 [Travis CI]: <https://travis-ci.org>
 [Docker Desktop]: <https://www.docker.com/products/docker-desktop>
+[Swagger API Documentation]: <http://sijojosan.com>
+[Selenium]: <https://www.selenium.dev>
 [LICENSE]: </LICENSE>
