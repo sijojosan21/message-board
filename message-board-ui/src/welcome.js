@@ -15,7 +15,7 @@ class Welcome extends Component {
             <div className="centered">
                  <div className="borderGreen">
                     <div className="centered"><h2>Welcome to Message Board.</h2></div>
-                    <p>To test automated deployment, feel free to change this text at <b>message-board-ui/welcome.js</b>.</p>
+                    <p>To test automated deployment, feel free to change this text at message-board-ui/welcome.js</p>
                 
                  </div>
             </div>
