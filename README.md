@@ -1,11 +1,9 @@
 # message-board
 
 [![Build Status](https://travis-ci.org/sijojosan21/message-board.svg?branch=master)](https://travis-ci.org/sijojosan21/message-board)
-
 <br/>
 
 Application can be accessed at [sijojosan.com]
-
 <br/>
 
 ## Technology Stack
