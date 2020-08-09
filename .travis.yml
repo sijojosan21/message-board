@@ -11,7 +11,7 @@ services:
 
 before_install:
     - docker build -t sijojosan/message-board-ui_dev -f ./message-board-ui/Dockerfile.dev ./message-board-ui
-    - docker build -t sijojosan/message-board-service_dev -f ./message-board-service/Dockerfile.dev ./message-board-service
+    - docker build -t sijojosan/message-board-service_dev -f ./message-board-service/Dockerfile.dev ./message-board-service -e PGUSER -e PGPASSWORD -e PGURL
 
 script:
     - docker run -e CI=true sijojosan/message-board-ui_dev npm test
@@ -19,7 +19,7 @@ script:
 
 after_success:
     - docker build -t sijojosan/message-board-ui ./message-board-ui
-    - docker build -t sijojosan/message-board-service ./message-board-service
+    - docker build -t sijojosan/message-board-service ./message-board-service -e PGUSER -e PGPASSWORD -e PGURL
     - docker build -t sijojosan/message-board-nginx ./nginx
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     - docker push sijojosan/message-board-ui
