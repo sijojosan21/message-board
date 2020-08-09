@@ -74,7 +74,7 @@ class PostMessage extends Component {
                                     <td> <input type="text" id="post1" onChange={this.myChangeHandler} name="user" /></td>
                                 </tr>
                                 <tr>
-                                    <td>Message Hedding</td>
+                                    <td>Message Heading</td>
                                     <td>:</td>
                                     <td> <input type="text" id="post2" onChange={this.myChangeHandler} name="header" /></td>
                                 </tr>
