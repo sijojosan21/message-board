@@ -1,14 +1,20 @@
 package com.sijojosan.msg.board.modal;
 
+import javax.validation.constraints.NotNull;
+
+
 public class MessageModal  {
 
 
 	private Long messageID;
 	
+	@NotNull(message = "User field is mandatory")
 	private String user;
 	
+	@NotNull(message = "Heading of the message is mandatory")
 	private String header;
 	
+	@NotNull(message = "Body of the message is mandatory")
 	private String body;
 	
 	private long messageTimeStamp;

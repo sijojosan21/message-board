@@ -33,6 +33,7 @@ class DeleteMessage extends Component {
         const response = await axios.delete('/message-board/api/message/'+messageID);
         if(response.data.responseCode==='COD001') {
             this.fetchMessages();
+            alert("Message was deleted.");
         }
     }
 
@@ -45,7 +46,7 @@ class DeleteMessage extends Component {
                     <h3>{message.header}</h3>
                     <p>{message.body}</p>
                     <span className="colourDarkorchid"><b>Posted at : {this.msToTime(message.messageTimeStamp)}</b></span><br/><br/>
-                    <button onClick={() => this.deleteMessage(message.messageID)}>Delete</button>
+                    <button className="delete_but" onClick={() => this.deleteMessage(message.messageID)}>Delete</button>
                 </div>         
             );
         } else if(this.firstLoad) {

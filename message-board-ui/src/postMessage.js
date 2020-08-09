@@ -27,20 +27,36 @@ class PostMessage extends Component {
       }
 
 
-    async postMessage() {
+    postMessage() {
    
         this.request.message = this.state;
-
-        const response = await axios.post('/message-board/api/message/add',this.request);
-        if(response.data.responseCode==='COD001') {
-            alert("Message was posted successfully.");
-            document.getElementById("post1").value="";
-            document.getElementById("post2").value="";
-            document.getElementById("post3").value="";
-        } else {
-            alert("Ooops. Something went wrong.");
-        }
-
+     
+        axios.post('/message-board/api/message/add',this.request)
+         .then((response) => {
+            //console.log(response);  
+             //if(response.satus==201) {
+                alert("Message was posted successfully.");
+                document.getElementById("post1").value="";
+                document.getElementById("post2").value="";
+                document.getElementById("post3").value="";            
+            // }
+         })
+        .catch(function (error) {
+            if (error.response) {
+                if(error.response.status===400) {
+                    alert(error.response.data.additionalErrors[0]);
+                } else {
+                    alert("Ooops. Something went wrong.");
+                }
+            }
+          });
+        
+         this.state = {
+            user:null,
+            header:null,
+            body:null
+        };
+             
         return false;
     }
 
@@ -68,7 +84,7 @@ class PostMessage extends Component {
                                     <td> <textarea id="post3"  onChange={this.myChangeHandler}  name="body" rows="12" cols="40" ></textarea></td>
                                 </tr>
                                 <tr>
-                                    <td align="center" colSpan="3"><button onClick={() => this.postMessage()}>Post Message</button></td>
+                                    <td align="center" colSpan="3"><button id="post_sum" onClick={() => this.postMessage()}>Post Message</button></td>
                                 </tr>
                             </tbody>
                         </table>
