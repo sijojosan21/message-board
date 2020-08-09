@@ -7,7 +7,7 @@ COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
 
-RUN ./mvnw clean install
+RUN ./mvnw clean install -Dmaven.test.skip=true 
 
 
 FROM openjdk:8-jdk-alpine
