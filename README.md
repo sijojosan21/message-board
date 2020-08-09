@@ -45,7 +45,7 @@ docker-compose up
 ## Testing
 
 ### Unit Testing
-JUnit test cases are written to unit test each service method. These test cases are executed before each deployment to AWS. If any of the test cases fail, deployment is aborted.
+JUnit test cases are written to unit test each REST endpoint. These test cases are executed before each deployment to AWS. If any of the test cases fail, deployment is aborted.
 
 ### Functional Testing
 A functional test suite written using [Selenium] WebDriver will test the proper functioning of the UI. The test case has be exported as a executable jar and can be run using the bellow commands - ([firefox browser] is required)
