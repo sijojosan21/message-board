@@ -22,12 +22,13 @@ Application can be accessed at [sijojosan.com]
 ### What is Travis CI
 Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub and Bitbucket. Travis CI provides various paid plan for private projects, and a free plan for open source.
 
+
 ### How to Deploy in AWS
   - Commit changes to the develop branch.
   - If you do not have a write access to this repository, you may fork the repository and make changes.
   - Create a pull request to the master branch.
   - Merge the pull request.
-  - Changes will be automatically detected and deployed to AWS with the help of Travis CI. (refer .travis.yml)
+  - Changes will be automatically detected and deployed to AWS with the help of Travis CI. (refer [.travis.yml])
 
 ### How to Deploy in Local
 Make the required changes in either the UI or the service backend and run the flowing commands. ([Docker Desktop] is required)
@@ -45,14 +46,14 @@ docker-compose up
 ## Testing
 
 ### Unit Testing
-JUnit test cases are written to unit test each service method. These test cases are executed before each deployment to AWS. If any of the test cases fail, deployment is aborted.
+JUnit test cases are written to unit test each REST endpoint. These test cases are executed before each deployment to AWS. If any of the test cases fail, deployment is aborted.
 
 ### Functional Testing
-A functional test suite written using [Selenium] WebDriver will test the proper functioning of the UI. The test case has be exported as a executable jar and can be run using the bellow commands - 
+A functional test suite written using [Selenium] WebDriver will test the proper functioning of the UI. The test case has be exported as a executable jar and can be run using the bellow commands - ([firefox browser] is required)
 ```sh
 cd message-board
 cd selenium-test
-java -jar selenium-test.jar
+java -jar selenium-test.jar [mac][linux][windows]
 ```
 <br/>
 
@@ -74,9 +75,12 @@ java -jar selenium-test.jar
 Apache License 2.0, see [LICENSE].
 
 
+
 [sijojosan.com]: <http://sijojosan.com>
 [Travis CI]: <https://travis-ci.org>
 [Docker Desktop]: <https://www.docker.com/products/docker-desktop>
-[Swagger API Documentation]: <http://sijojosan.com>
+[Swagger API Documentation]: <http://sijojosan.com/message-board/api/swagger-ui.html>
 [Selenium]: <https://www.selenium.dev>
 [LICENSE]: </LICENSE>
+[.travis.yml]: </.travis.yml>
+[firefox browser]: <https://www.mozilla.org/en-US/firefox/new/>

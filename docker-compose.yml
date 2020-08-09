@@ -12,11 +12,9 @@ services:
       dockerfile: Dockerfile.dev
       context: ./message-board-service
     environment:
-      - PGUSER=postgres
-      - PGHOST=postgres
-      - PGDATABASE=postgres
-      - PGPASSWORD=postgres_password
-      - PGPORT=5432
+      - PGUSER=message_board
+      - PGPASSWORD=Qwertyui1
+      - PGURL=jdbc:postgresql://message-board-1.cvdwqjgyzhlh.us-east-1.rds.amazonaws.com:5432/postgres
   message-board-ui:
     build:
       dockerfile: Dockerfile.dev
