@@ -21,10 +21,10 @@ function App() {
         <div className ="centered">
           
           <ul id="horizontal-list">
-              <li><Link to="/postMessage"  className="menu">Post Message</Link></li>
-              <li><Link to="/viewMessages" className="menu">View Messages</Link></li>
-              <li><Link to="/viewMessagesVowels" className="menu">Messages With Vowels</Link></li>
-              <li><Link to="/deleteMessage" className="menu">Delete Message</Link></li>
+              <li id="menu_post"><Link to="/postMessage"  className="menu">Post Message</Link></li>
+              <li id="menu_view"><Link to="/viewMessages" className="menu">View Messages</Link></li>
+              <li id="menu_vowel"><Link to="/viewMessagesVowels" className="menu">Messages With Vowels</Link></li>
+              <li id="menu_delete"><Link to="/deleteMessage" className="menu">Delete Message</Link></li>
              
           </ul>
         </div>

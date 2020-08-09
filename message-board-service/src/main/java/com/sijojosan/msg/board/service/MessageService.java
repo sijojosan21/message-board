@@ -38,11 +38,6 @@ public class MessageService {
 
 		MessageModal messageToAdd = request.getMessage();
 
-		if (messageToAdd.getUser() == null) {
-			response.updateResponseCode(ResponseCode.MANDATORY_FIELDS_MISSING);
-			return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
-		}
-
 		messageToAdd.setMessageTimeStamp(Calendar.getInstance().getTimeInMillis());
 
 		Message m = mapper.map(messageToAdd, Message.class);
@@ -54,7 +49,7 @@ public class MessageService {
 		response.updateResponseCode(ResponseCode.SUCCESS);
 		response.setMessage(messageToAdd);
 
-		return new ResponseEntity<>(response, HttpStatus.OK);
+		return new ResponseEntity<>(response, HttpStatus.CREATED);
 	}
 
 	public ResponseEntity<GetMessageResponse> getAllMessages() {
@@ -62,7 +57,7 @@ public class MessageService {
 		GetMessageResponse response = new GetMessageResponse();
 		response.updateResponseCode(ResponseCode.FAILED);
 
-		List<Message> messages = (List<Message>) messageRepository.findAll();
+		List<Message> messages = (List<Message>) messageRepository.findAllByOrderByMessageTimeStampDesc();
 
 		messages.forEach(m -> {
 			response.getMessages().add(mapper.map(m, MessageModal.class));
@@ -85,7 +80,7 @@ public class MessageService {
 			response.updateResponseCode(ResponseCode.SUCCESS);
 		} else  {
 			response.updateResponseCode(ResponseCode.MESSAGE_NOT_FOUD);
-			return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>(response, HttpStatus.NO_CONTENT);
 		}
 
 		return new ResponseEntity<>(response, HttpStatus.OK);
@@ -97,7 +92,7 @@ public class MessageService {
 		GetMessageResponse response = new GetMessageResponse();
 		response.updateResponseCode(ResponseCode.FAILED);
 
-		List<Message> messages = (List<Message>) messageRepository.findAll();
+		List<Message> messages = (List<Message>) messageRepository.findAllByOrderByMessageTimeStampDesc();
 
 		messages.forEach(m -> {
 			
