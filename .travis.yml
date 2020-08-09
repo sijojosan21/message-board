@@ -11,11 +11,11 @@ services:
 
 before_install:
     - docker build -t sijojosan/message-board-ui_dev -f ./message-board-ui/Dockerfile.dev ./message-board-ui
-    - docker build -t sijojosan/message-board-service_dev -f ./message-board-service/Dockerfile.dev ./message-board-service --build-arg PGUSER=$PGUSER --build-arg PGPASSWORD=$PGPASSWORD --build-arg PGURL=$PGURL
+    - docker build -t sijojosan/message-board-service_dev -f ./message-board-service/Dockerfile.dev ./message-board-service
 
 script:
     - docker run -e CI=true sijojosan/message-board-ui_dev npm test
-    - docker run sijojosan/message-board-service_dev mvn test
+    - docker run -e PGUSER -e PGPASSWORD -e PGURL sijojosan/message-board-service_dev mvn test
 
 after_success:
     - docker build -t sijojosan/message-board-ui ./message-board-ui
