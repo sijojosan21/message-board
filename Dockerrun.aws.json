@@ -5,13 +5,13 @@
       "name": "message-board-service",
       "image": "sijojosan/message-board-service",
       "hostname": "message-board-service",
-      "essential": false,
+      "essential": true,
       "memory": 284
     },{
       "name": "message-board-ui",
       "image": "sijojosan/message-board-ui",
       "hostname": "message-board-ui",
-      "essential": false,
+      "essential": true,
       "memory": 128
     },
     {
