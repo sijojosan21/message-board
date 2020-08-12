@@ -6,7 +6,7 @@
       "image": "sijojosan/message-board-service",
       "hostname": "message-board-service",
       "essential": false,
-      "memory": 256
+      "memory": 284
     },{
       "name": "message-board-ui",
       "image": "sijojosan/message-board-ui",
