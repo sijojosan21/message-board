@@ -67,6 +67,22 @@ public class MessageService {
 
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
+	
+	public ResponseEntity<GetMessageResponse> searchMessage(String query) {
+
+		GetMessageResponse response = new GetMessageResponse();
+		response.updateResponseCode(ResponseCode.FAILED);
+
+		List<Message> messages = (List<Message>) messageRepository.searchMessages(query.toLowerCase());
+
+		messages.forEach(m -> {
+			response.getMessages().add(mapper.map(m, MessageModal.class));
+		});
+
+		response.updateResponseCode(ResponseCode.SUCCESS);
+
+		return new ResponseEntity<>(response, HttpStatus.OK);
+	}
 
 	public ResponseEntity<BaseResponse> deleteMessage(long messageID) {
 

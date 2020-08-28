@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sijojosan.msg.board.controller.request.AddMessageRequest;
@@ -39,6 +40,18 @@ public class MessageController extends BaseController{
 	public ResponseEntity<GetMessageResponse> messages() {
 		
 		ResponseEntity<GetMessageResponse> response  = messageService.getAllMessages();
+		
+		return response;
+	}
+	
+	@ApiOperation(value = "Search messages.")
+	@ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Successfully performed a search.")
+    })
+	@GetMapping(value = "/message/search", produces = {MediaType.APPLICATION_JSON_VALUE})
+	public ResponseEntity<GetMessageResponse> messagesSearch(@RequestParam("query") String query) {
+		
+		ResponseEntity<GetMessageResponse> response  = messageService.searchMessage(query);
 		
 		return response;
 	}
