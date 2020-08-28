@@ -19,7 +19,6 @@ class SearchMessages extends Component {
         if (!this.debouncedFn) {
             this.debouncedFn = _.debounce(() => {
                 const userInput = e.target.value
-                console.log("onChange-" + userInput);
                 this.fetchMessages(userInput)
             }, 700);
         }
@@ -43,10 +42,9 @@ class SearchMessages extends Component {
     async fetchMessages(userInputValue) {
 
         if (userInputValue.length > 2) {
-            console.log("fetchMessages-" + userInputValue);
-            const response = await axios.get('/message-board/api/message/search?query='+userInputValue);
+            const response = await axios.get('/message-board/api/message/search?query='+encodeURIComponent(userInputValue));
             this.firstLoad = false;
-            this.setState({ rows: response.data.data, userInput: userInputValue });
+            this.setState({ rows: response.data.messages, userInput: userInputValue });
         } else {
             this.setState({ rows: [], userInput: userInputValue });
         }
@@ -71,7 +69,7 @@ class SearchMessages extends Component {
                     )};
                 </div>
             );
-        } else {
+        } else if (this.firstLoad) {
             messageListComponent = (
                 <div className="centered" >
                     Start Searching.
