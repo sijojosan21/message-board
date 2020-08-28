@@ -8,6 +8,7 @@ import ViewMessagesVowels from './viewMessagesVowels';
 import DeleteMessage from './deleteMessage';
 import PostMessage from './postMessage';
 import Welcome from './welcome';
+import SearchMessages from './searchMessages';
 
 
 
@@ -25,6 +26,7 @@ function App() {
               <li id="menu_view"><Link to="/viewMessages" className="menu">View Messages</Link></li>
               <li id="menu_vowel"><Link to="/viewMessagesVowels" className="menu">Messages With Vowels</Link></li>
               <li id="menu_delete"><Link to="/deleteMessage" className="menu">Delete Message</Link></li>
+              <li id="menu_search"><Link to="/searchMessages" className="menu">Search Messages</Link></li>
              
           </ul>
         </div>
@@ -35,6 +37,7 @@ function App() {
           <Route  path="/viewMessagesVowels" component={ViewMessagesVowels}/>
           <Route  path="/deleteMessage" component={DeleteMessage}/>
           <Route  path="/postMessage" component={PostMessage}/>
+          <Route  path="/searchMessages" component={SearchMessages}/>
         </div>
       </div>
     </Router>
